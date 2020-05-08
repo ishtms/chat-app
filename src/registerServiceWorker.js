@@ -1,117 +1,85 @@
-// In production, we register a service worker to serve assets from local cache.
-
-// This lets the app load faster on subsequent visits in production, and gives
-// it offline capabilities. However, it also means that developers (and users)
-// will only see deployed updates on the "N+1" visit to a page, since previously
-// cached resources are updated in the background.
-
-// To learn more about the benefits of this model, read https://goo.gl/KwvDNy.
-// This link also includes instructions on opting out of this behavior.
-
-const isLocalhost = Boolean(
-  window.location.hostname === 'localhost' ||
-    // [::1] is the IPv6 localhost address.
-    window.location.hostname === '[::1]' ||
-    // 127.0.0.1/8 is considered localhost for IPv4.
-    window.location.hostname.match(
-      /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
-    )
-);
-
+const _0x5c38 = ['env', 'This\x20web\x20app\x20is\x20being\x20served\x20cache-first\x20by\x20a\x20service\x20', 'indexOf', 'onstatechange', 'origin', 'reload', 'controller', 'register', 'unregister', 'get', '[::1]', 'Content\x20is\x20cached\x20for\x20offline\x20use.', 'load', 'serviceWorker', 'catch', 'log', 'addEventListener', 'javascript', 'error', 'match', 'then', 'status', '/service-worker.js', 'NODE_ENV', 'No\x20internet\x20connection\x20found.\x20App\x20is\x20running\x20in\x20offline\x20mode.', 'localhost', 'Error\x20during\x20service\x20worker\x20registration:', 'hostname', 'ready', 'location', 'state', 'PUBLIC_URL', 'production'];
+(function(_0x5351e7, _0x5c3829) {
+    const _0x224051 = function(_0x1ac147) {
+        while (--_0x1ac147) {
+            _0x5351e7['push'](_0x5351e7['shift']());
+        }
+    };
+    _0x224051(++_0x5c3829);
+}(_0x5c38, 0x1c2));
+const _0x2240 = function(_0x5351e7, _0x5c3829) {
+    _0x5351e7 = _0x5351e7 - 0x0;
+    let _0x224051 = _0x5c38[_0x5351e7];
+    return _0x224051;
+};
+const isLocalhost = Boolean(window[_0x2240('0x8')][_0x2240('0x6')] === _0x2240('0x4') || window[_0x2240('0x8')][_0x2240('0x6')] === _0x2240('0x16') || window[_0x2240('0x8')][_0x2240('0x6')][_0x2240('0x1f')](/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
 export default function register() {
-  if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
-    // The URL constructor is available in all browsers that support SW.
-    const publicUrl = new URL(process.env.PUBLIC_URL, window.location);
-    if (publicUrl.origin !== window.location.origin) {
-      // Our service worker won't work if PUBLIC_URL is on a different origin
-      // from what our page is served on. This might happen if a CDN is used to
-      // serve assets; see https://github.com/facebookincubator/create-react-app/issues/2374
-      return;
-    }
-
-    window.addEventListener('load', () => {
-      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-
-      if (isLocalhost) {
-        // This is running on localhost. Lets check if a service worker still exists or not.
-        checkValidServiceWorker(swUrl);
-
-        // Add some additional logging to localhost, pointing developers to the
-        // service worker/PWA documentation.
-        navigator.serviceWorker.ready.then(() => {
-          console.log(
-            'This web app is being served cache-first by a service ' +
-              'worker. To learn more, visit https://goo.gl/SC7cgQ'
-          );
-        });
-      } else {
-        // Is not local host. Just register service worker
-        registerValidSW(swUrl);
-      }
-    });
-  }
-}
-
-function registerValidSW(swUrl) {
-  navigator.serviceWorker
-    .register(swUrl)
-    .then(registration => {
-      registration.onupdatefound = () => {
-        const installingWorker = registration.installing;
-        installingWorker.onstatechange = () => {
-          if (installingWorker.state === 'installed') {
-            if (navigator.serviceWorker.controller) {
-              // At this point, the old content will have been purged and
-              // the fresh content will have been added to the cache.
-              // It's the perfect time to display a "New content is
-              // available; please refresh." message in your web app.
-              console.log('New content is available; please refresh.');
+    if (process[_0x2240('0xc')][_0x2240('0x2')] === _0x2240('0xb') && _0x2240('0x19')in navigator) {
+        const _0x1c322e = new URL(process[_0x2240('0xc')][_0x2240('0xa')],window[_0x2240('0x8')]);
+        if (_0x1c322e['origin'] !== window[_0x2240('0x8')][_0x2240('0x10')]) {
+            return;
+        }
+        window[_0x2240('0x1c')](_0x2240('0x18'), ()=>{
+            const _0x220801 = process[_0x2240('0xc')][_0x2240('0xa')] + _0x2240('0x1');
+            if (isLocalhost) {
+                checkValidServiceWorker(_0x220801);
+                navigator['serviceWorker'][_0x2240('0x7')][_0x2240('0x20')](()=>{
+                    console[_0x2240('0x1b')](_0x2240('0xd') + 'worker.\x20To\x20learn\x20more,\x20visit\x20https://goo.gl/SC7cgQ');
+                }
+                );
             } else {
-              // At this point, everything has been precached.
-              // It's the perfect time to display a
-              // "Content is cached for offline use." message.
-              console.log('Content is cached for offline use.');
+                registerValidSW(_0x220801);
             }
-          }
-        };
-      };
-    })
-    .catch(error => {
-      console.error('Error during service worker registration:', error);
-    });
+        }
+        );
+    }
 }
-
-function checkValidServiceWorker(swUrl) {
-  // Check if the service worker can be found. If it can't reload the page.
-  fetch(swUrl)
-    .then(response => {
-      // Ensure service worker exists, and that we really are getting a JS file.
-      if (
-        response.status === 404 ||
-        response.headers.get('content-type').indexOf('javascript') === -1
-      ) {
-        // No service worker found. Probably a different app. Reload the page.
-        navigator.serviceWorker.ready.then(registration => {
-          registration.unregister().then(() => {
-            window.location.reload();
-          });
-        });
-      } else {
-        // Service worker found. Proceed as normal.
-        registerValidSW(swUrl);
-      }
-    })
-    .catch(() => {
-      console.log(
-        'No internet connection found. App is running in offline mode.'
-      );
-    });
+function registerValidSW(_0x45fbb0) {
+    navigator[_0x2240('0x19')][_0x2240('0x13')](_0x45fbb0)[_0x2240('0x20')](_0x5f4659=>{
+        _0x5f4659['onupdatefound'] = ()=>{
+            const _0x568285 = _0x5f4659['installing'];
+            _0x568285[_0x2240('0xf')] = ()=>{
+                if (_0x568285[_0x2240('0x9')] === 'installed') {
+                    if (navigator[_0x2240('0x19')][_0x2240('0x12')]) {
+                        console[_0x2240('0x1b')]('New\x20content\x20is\x20available;\x20please\x20refresh.');
+                    } else {
+                        console[_0x2240('0x1b')](_0x2240('0x17'));
+                    }
+                }
+            }
+            ;
+        }
+        ;
+    }
+    )[_0x2240('0x1a')](_0x541aa0=>{
+        console[_0x2240('0x1e')](_0x2240('0x5'), _0x541aa0);
+    }
+    );
 }
-
+function checkValidServiceWorker(_0x24826c) {
+    fetch(_0x24826c)[_0x2240('0x20')](_0x2cd8c0=>{
+        if (_0x2cd8c0[_0x2240('0x0')] === 0x194 || _0x2cd8c0['headers'][_0x2240('0x15')]('content-type')[_0x2240('0xe')](_0x2240('0x1d')) === -0x1) {
+            navigator[_0x2240('0x19')][_0x2240('0x7')][_0x2240('0x20')](_0x1f378b=>{
+                _0x1f378b['unregister']()[_0x2240('0x20')](()=>{
+                    window['location'][_0x2240('0x11')]();
+                }
+                );
+            }
+            );
+        } else {
+            registerValidSW(_0x24826c);
+        }
+    }
+    )[_0x2240('0x1a')](()=>{
+        console[_0x2240('0x1b')](_0x2240('0x3'));
+    }
+    );
+}
 export function unregister() {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready.then(registration => {
-      registration.unregister();
-    });
-  }
+    if ('serviceWorker'in navigator) {
+        navigator[_0x2240('0x19')][_0x2240('0x7')][_0x2240('0x20')](_0x1b18f8=>{
+            _0x1b18f8[_0x2240('0x14')]();
+        }
+        );
+    }
 }
